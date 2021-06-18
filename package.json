@@ -1,0 +1,27 @@
+{
+  "name": "mern-crud",
+  "version": "1.0.0",
+  "description": "full stack crud with authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soykot2910/mern-crud.git"
+  },
+  "author": "soykot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soykot2910/mern-crud/issues"
+  },
+  "homepage": "https://github.com/soykot2910/mern-crud#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.2"
+  }
+}

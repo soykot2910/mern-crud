@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "full stack crud with authentication",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backend/server.js"
+    "start": "node server/server",
+    "server": "nodemon server/server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -19,9 +22,13 @@
   "homepage": "https://github.com/soykot2910/mern-crud#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "colors": "^1.4.0",
+    "concurrently": "^6.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.5",
-    "mongoose": "^5.12.2"
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0"
   }
 }

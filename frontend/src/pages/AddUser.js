@@ -15,8 +15,7 @@ export default function AddUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
-    await axios.post("http://localhost:3003/users", user);
+    await axios.post("http://localhost:4000/api/users", user);
     history.push("/");
   };
 
@@ -58,7 +57,7 @@ export default function AddUser() {
           <Form.Control
             className="my-3"
             size="lg"
-            type="number"
+            type="text"
             placeholder="Enter Your Phone"
             name="phone"
             value={user.phone}

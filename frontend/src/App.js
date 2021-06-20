@@ -14,7 +14,7 @@ export default function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/post" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/add-user" component={AddUser} />
         <Route exact path="/edit-user/:id" component={EditUser} />

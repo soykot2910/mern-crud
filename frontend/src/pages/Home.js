@@ -14,12 +14,12 @@ export default function Home() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:3003/users");
+    const result = await axios.get("http://localhost:4000/api/users");
     setUser(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3003/users/${id}`);
+    await axios.delete(`http://localhost:4000/api/users/${id}`);
     loadUsers();
   };
 
@@ -54,18 +54,15 @@ export default function Home() {
               <td>{user.email}</td>
               <td>{user.phone}</td>
               <td>
-                <Link to="/view" className="btn btn-primary m-2">
-                  View
-                </Link>
                 <Link
-                  to={`/edit-user/${user.id}`}
+                  to={`/edit-user/${user._id}`}
                   className="btn btn-outline-secondary m-2"
                 >
                   Edit
                 </Link>
                 <Link
                   className="btn btn-danger m-2"
-                  onClick={() => deleteUser(user.id)}
+                  onClick={() => deleteUser(user._id)}
                 >
                   Delete
                 </Link>

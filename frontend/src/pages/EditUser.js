@@ -16,7 +16,7 @@ export default function EditUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3003/users/${id}`, user);
+    await axios.put(`http://localhost:4000/api/users/${id}`, user);
     history.push("/");
   };
 
@@ -28,7 +28,7 @@ export default function EditUser() {
   }, []);
 
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:3003/users/${id}`);
+    const result = await axios.get(`http://localhost:4000/api/users/${id}`);
     console.log(result.data);
     setUser(result.data);
   };

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Pagination from "../components/Pagination";
 
-export default function Home() {
+export default function UserList() {
   const [users, setUser] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState([5]);

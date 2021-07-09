@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 
 export default function NavBar() {
+  var arr = window.location.href.split("/");
+
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="md">
@@ -12,12 +14,18 @@ export default function NavBar() {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/post">Post</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link href="/userList">UserList</Nav.Link>
             </Nav>
             <Nav className="ms-auto">
-              <Nav.Link href="/add-user">
-                <Button variant="outline-primary">Add User</Button>
-              </Nav.Link>
+              {arr[3] !== "post" ? (
+                <Nav.Link href="/add-user">
+                  <Button variant="outline-primary">Add User</Button>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/add-post">
+                  <Button variant="outline-primary">Add Post</Button>
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

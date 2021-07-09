@@ -15,7 +15,8 @@ connectDB();
 const app = express();
 
 //parse request to body-parser
-app.use(express.json());
+app.use("/public", express.static("public"));
+app.use(express.json({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/api/users", userRoute);

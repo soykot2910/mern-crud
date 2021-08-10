@@ -11,9 +11,8 @@ export default function NavBar() {
           <Navbar.Brand href="/">MERN CRUD</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/post">Post</Nav.Link>
+            <Nav className="mx-auto">
+              <Nav.Link href="/post">All Post</Nav.Link>
               <Nav.Link href="/userList">UserList</Nav.Link>
             </Nav>
             <Nav className="ms-auto">

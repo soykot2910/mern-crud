@@ -17,7 +17,7 @@ export default function About() {
     }
     formData.append("title", title);
     formData.append("description", description);
-    await axios.post("http://localhost:4000/api/posts", formData, {});
+    await axios.post("http://localhost:5000/api/posts", formData, {});
     console.log(formData);
 
     history.push("/post");

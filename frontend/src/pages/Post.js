@@ -9,7 +9,7 @@ export default function Post() {
   }, []);
 
   const loadPosts = async () => {
-    const { data } = await axios.get("http://localhost:4000/api/posts");
+    const { data } = await axios.get("http://localhost:5000/api/posts");
     setPosts(data);
   };
 

@@ -2,34 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Pagination from "../components/Pagination";
 
 export default function UserList() {
   const [users, setUser] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState([5]);
 
   useEffect(() => {
     loadUsers();
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:4000/api/users");
+    const result = await axios.get("http://localhost:5000/api/users");
     setUser(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:4000/api/users/${id}`);
+    await axios.delete(`http://localhost:5000/api/users/${id}`);
     loadUsers();
   };
-
-  // Get current posts
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <Container className="py-5">
@@ -46,7 +35,7 @@ export default function UserList() {
           </tr>
         </thead>
         <tbody>
-          {currentUsers.map((user, index) => (
+          {users.map((user, index) => (
             <tr key={index}>
               <th>{index + 1}</th>
               <td>{user.name}</td>
@@ -70,11 +59,6 @@ export default function UserList() {
             </tr>
           ))}
         </tbody>
-        <Pagination
-          postsPerPage={usersPerPage}
-          totalPosts={users.length}
-          paginate={paginate}
-        />
       </Table>
     </Container>
   );
